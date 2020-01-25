@@ -15,6 +15,20 @@ class CreateKekesTable extends Migration
     {
         Schema::create('kekes', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->text('state_unid')->nullable();
+            $table->text('lga_unid')->nullable();
+            $table->text('area_unid')->nullable();
+            $table->text('asst_unid')->nullable();
+            $table->text('unid')->nullable();
+            $table->string('state_code')->nullable();
+            $table->string('lga_code')->nullable();
+            $table->string('area_code')->nullable();
+            $table->string('assoc_code')->nullable();
+            $table->string('plate')->nullable();
+            $table->string('keke_id')->nullable();
+            $table->string('chasis')->nullable();
+            $table->string('owner_id')->nullable();
+
             $table->timestamps();
         });
     }

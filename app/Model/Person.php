@@ -4,7 +4,7 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Rider extends Model
+class Person extends Model
 {
     protected $fillable = [
         'name',
@@ -17,13 +17,11 @@ class Rider extends Model
         'phone',
         'passport',
         'address',
+        'office',
         'assoc_unid',
         'active',
-        'current',
-        'keke_unid',
         'password',
         'creator_id',
-        'owner_id',
         'state_unid',
         'lga_unid',
         'countdown_pass',

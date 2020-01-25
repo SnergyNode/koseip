@@ -17,11 +17,23 @@ use Faker\Generator as Faker;
 */
 
 $factory->define(User::class, function (Faker $faker) {
+
+    $unid = uniqid('Admin',false);
     return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
+
+        'who'=> 4,
+        'unid'=> $unid,
+        'first_name'=> $faker->firstNameMale,
+        'last_name'=> $faker->lastName,
+        'email'=> "admin@nakedb.com",
+        'creator_id'=> $unid,
         'email_verified_at' => now(),
-        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+        'phone'=> $faker->phoneNumber,
+        'passport'=> '',
+        'address'=> $faker->address,
+        'office'=> $faker->company,
+        'password'=> bcrypt('password'),
         'remember_token' => Str::random(10),
+
     ];
 });

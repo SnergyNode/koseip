@@ -15,6 +15,19 @@ class CreateNotesTable extends Migration
     {
         Schema::create('notes', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('user_id')->nullable();
+            $table->string('state_id')->nullable();
+            $table->string('lga_id')->nullable();
+            $table->string('area_id')->nullable();
+            $table->string('assoc_id')->nullable();
+            $table->string('owner_id')->nullable();
+            $table->string('rider_id')->nullable();
+            $table->string('keke_id')->nullable();
+            $table->string('note_id')->nullable();
+            $table->string('author')->nullable();
+            $table->bigInteger('time')->nullable();
+            $table->longText('details')->nullable();
+            $table->boolean('active')->nullable();
             $table->timestamps();
         });
     }

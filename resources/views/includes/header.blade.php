@@ -3,6 +3,7 @@
 <header id="header-container" class="fullwidth transparent-header">
 
     <!-- Header -->
+
     <div id="header">
         <div class="container">
 
@@ -17,7 +18,7 @@
                 <!-- Main Navigation -->
                 <nav id="navigation">
                     <ul id="responsive">
-                        <li><a href="#" class="current">Home</a></li>
+                        <li><a href="{{ route('home') }}" class="current">Home</a></li>
                         <li><a href="#" class="current">About</a></li>
                         <li><a href="#" class="current">Media</a></li>
                         <li><a href="#" class="current">Blogs</a></li>

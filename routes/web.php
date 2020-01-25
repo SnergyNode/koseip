@@ -19,9 +19,28 @@ use \Illuminate\Support\Facades\Artisan;
 
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('login', 'AuthController@login')->name('login');
+Route::post('admin/verify', 'AuthController@verifyAdmin')->name('admin.login');
+
 
 /**
  * CACHE CLEAR ROUTES
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * SUPER ADMIN ROUTES BELOW
  */
 
  //Clear route cache:
@@ -47,7 +66,3 @@ Route::get('/clear_view', function() {
     $exitCode = Artisan::call('view:clear');
     return 'View cache cleared';
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

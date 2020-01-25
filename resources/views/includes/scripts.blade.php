@@ -3,7 +3,7 @@
 
 <!-- Scripts
 ================================================== -->
-<script src="{{ asset('js/jquery-3.3.1.min.js') }}" defer></script>
+<script src="{{ asset('js/jquery-3.3.1.min.js') }}" ></script>
 <script src="{{ asset('js/jquery-migrate-3.0.0.min.js') }}" defer></script>
 <script src="{{ asset('js/mmenu.min.js') }}" defer></script>
 <script src="{{ asset('js/tippy.all.min.js') }}" defer></script>
@@ -18,7 +18,7 @@
 <script src="{{ asset('js/custom.js') }}" defer></script>
 
 <!-- Snackbar // documentation: https://www.polonel.com/snackbar/ -->
-<script>
+<script >
     // Snackbar for user status switcher
     $('#snackbar-user-status label').click(function() {
         Snackbar.show({

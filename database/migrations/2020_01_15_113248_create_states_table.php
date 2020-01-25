@@ -20,7 +20,7 @@ class CreateStatesTable extends Migration
             $table->text('unid')->nullable();
             $table->text('info')->nullable();
             $table->boolean('active')->nullable();
-            $table->string('creator')->nullable();
+            $table->string('added_by')->nullable();
             $table->timestamps();
         });
     }

@@ -15,6 +15,13 @@ class CreateLgasTable extends Migration
     {
         Schema::create('lgas', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name')->nullable();
+            $table->string('code')->nullable();
+            $table->text('unid')->nullable();
+            $table->text('info')->nullable();
+            $table->text('state_unid')->nullable();
+            $table->boolean('active')->nullable();
+            $table->string('added_by')->nullable();
             $table->timestamps();
         });
     }
