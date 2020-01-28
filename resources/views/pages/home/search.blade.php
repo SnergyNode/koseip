@@ -52,7 +52,14 @@ $styleInject = ".transparent-header #header {background-color: #303030 !importan
                             <div class="task-listing-bid-inner">
                                 <div class="task-offers">
                                     <strong>Owner</strong>
-                                    <span>{{ !empty($keke->owner)?$keke->owner->name:'Not Registered' }}</span>
+                                    @if(!empty($keke->owner))
+                                        <span>{{ $keke->owner->name }}</span>
+                                        <span>{{ $keke->owner->phone }}</span>
+                                    @else
+                                        <span>Not Registered </span>
+                                    @endif
+
+
                                 </div>
 
                             </div>
