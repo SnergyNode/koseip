@@ -44,4 +44,10 @@ class Keke extends Model
     public function riders(){
         return $this->hasMany(Rider::class, 'keke_unid', 'unid');
     }
+
+    public function riderOne($key){
+        $rider = Rider::where('keke_unid', $this->unid)->where('active', true)->first();
+
+        return !empty($rider)?$rider->$key:null;
+    }
 }

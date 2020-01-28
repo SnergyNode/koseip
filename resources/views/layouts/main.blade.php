@@ -19,7 +19,7 @@
     </style>
 </head>
 <body>
-    <div id="wrapper" class="wrapper-with-transparent-header">
+    <div id="wrapper" class="{{ @$transparentbg }}">
 
         @include('includes.header')
 

@@ -153,8 +153,22 @@ class KekeController extends Controller
 
     public function qrItem(Request $request, $code){
         //return the details of the keke
-        $keke = Keke::where('code', $code)->first();
+        $keke = Keke::where('code', $code)->get();
 
-        return $keke; //in view
+        return view('pages.home.search')->with('kekes', $keke);
+    }
+
+    public function searchRef(Request $request){
+        //search for value
+        $pin = $request->input('needle');
+
+        $keke = Keke::query()
+            ->where('plate', 'LIKE', "%{$pin}%")
+            ->where('area_code', 'LIKE', "%{$pin}%")
+            ->where('assoc_code', 'LIKE', "%{$pin}%")
+            ->orWhere('code', 'LIKE', "%{$pin}%")
+            ->get();
+
+        return view('pages.home.search')->with('kekes', $keke);
     }
 }

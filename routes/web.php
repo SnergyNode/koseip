@@ -23,6 +23,7 @@ Route::get('login', 'AuthController@login')->name('login');
 Route::post('admin/verify', 'AuthController@verifyAdmin')->name('admin.login');
 
 Route::get('preview/qr/item/{key}', 'KekeController@qrItem')->name('qr.scan');
+Route::post('search/ref', 'KekeController@searchRef')->name('ref.search');
 
 
 

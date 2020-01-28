@@ -62,7 +62,7 @@
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="7">
+                                    <td colspan="8">
                                         <p class="text-center">No Records Found</p>
                                     </td>
                                 </tr>

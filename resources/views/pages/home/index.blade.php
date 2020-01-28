@@ -1,3 +1,6 @@
+<?php
+$transparentbg = 'wrapper-with-transparent-header';
+?>
 @extends('layouts.main')
 
 @section('content')
@@ -23,25 +26,34 @@
 
             <!-- Search Bar -->
             <div class="row">
+
                 <div class="col-md-12">
-                    <div class="intro-banner-search-form margin-top-95">
+                    <form action="{{ route('ref.search') }}" method="post">
+                        @csrf
+                        <div class="intro-banner-search-form margin-top-95">
 
-                        <!-- Search Field -->
-                        <div class="intro-search-field with-autocomplete">
-                            <label for="autocomplete-input" class="field-title ripple-effect">Reference Number?</label>
-                            <div class="input-with-icon">
-                                <input id="autocomplete-input" type="text" placeholder="Keke reference number">
-                                <i class="icon-material-outline-search"></i>
+
+                            <!-- Search Field -->
+                            <div class="intro-search-field with-autocomplete">
+                                <label for="autocomplete-input" class="field-title ripple-effect">Reference Number?</label>
+                                <div class="input-with-icon">
+                                    <input id="autocomplete-input" name="needle" type="text" placeholder="Keke reference number (or what you can remember)">
+                                    <i class="icon-material-outline-search"></i>
+                                </div>
                             </div>
+
+
+
+                            <!-- Button -->
+                            <div class="intro-search-button">
+                                <button class="button ripple-effect" onclick="window.location.href=''">Search</button>
+                            </div>
+
+
                         </div>
+                    </form>
 
 
-
-                        <!-- Button -->
-                        <div class="intro-search-button">
-                            <button class="button ripple-effect" onclick="window.location.href='jobs-list-layout-1.html'">Search</button>
-                        </div>
-                    </div>
                 </div>
             </div>
 
