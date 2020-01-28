@@ -26,8 +26,10 @@ class CreateKekesTable extends Migration
             $table->string('assoc_code')->nullable();
             $table->string('plate')->nullable();
             $table->string('keke_id')->nullable();
+            $table->string('code')->nullable();
             $table->string('chasis')->nullable();
             $table->string('owner_id')->nullable();
+            $table->boolean('active')->nullable();
 
             $table->timestamps();
         });

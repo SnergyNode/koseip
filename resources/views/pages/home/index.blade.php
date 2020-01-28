@@ -278,27 +278,27 @@
                         <div class="logo-carousel">
 
                             <div class="carousel-item">
-                                <a href="http://acmelogos.com/" target="_blank" title="http://acmelogos.com/"><img src="images/logo-carousel-01.png" alt=""></a>
+                                <a href="#" target="_blank" title="partners"><img src="{{ url('images/partner1.png') }}" alt=""></a>
                             </div>
 
                             <div class="carousel-item">
-                                <a href="http://acmelogos.com/" target="_blank" title="http://acmelogos.com/"><img src="images/logo-carousel-02.png" alt=""></a>
+                                <a href="#" target="_blank" title="partners"><img src="{{ url('images/partner2.png') }}" alt=""></a>
                             </div>
 
                             <div class="carousel-item">
-                                <a href="http://acmelogos.com/" target="_blank" title="http://acmelogos.com/"><img src="images/logo-carousel-03.png" alt=""></a>
+                                <a href="#" target="_blank" title="partners"><img src="{{ url('images/partner1.png') }}" alt=""></a>
                             </div>
 
                             <div class="carousel-item">
-                                <a href="http://acmelogos.com/" target="_blank" title="http://acmelogos.com/"><img src="images/logo-carousel-04.png" alt=""></a>
+                                <a href="#" target="_blank" title="partners"><img src="{{ url('images/partner2.png') }}" alt=""></a>
                             </div>
 
                             <div class="carousel-item">
-                                <a href="http://acmelogos.com/" target="_blank" title="http://acmelogos.com/"><img src="images/logo-carousel-05.png" alt=""></a>
+                                <a href="#" target="_blank" title="partners"><img src="{{ url('images/partner1.png') }}" alt=""></a>
                             </div>
 
                             <div class="carousel-item">
-                                <a href="http://acmelogos.com/" target="_blank" title="http://acmelogos.com/"><img src="images/logo-carousel-06.png" alt=""></a>
+                                <a href="#" target="_blank" title="partners"><img src="{{ url('images/partner2.png') }}" alt=""></a>
                             </div>
 
                         </div>

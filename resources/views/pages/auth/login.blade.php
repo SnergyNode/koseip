@@ -32,7 +32,7 @@ $styleInject = ".transparent-header #header {background-color: #303030 !importan
                             <input type="text" class="input-text with-border" name="access" id="emailaddress" placeholder="Email Address" required autocomplete="off" value="{{ old('access') }}" >
 
                             @if ($errors->has('access'))
-                                <span class="help-block">
+                                <span class="help-block text-danger">
                                         <strong>{{ $errors->first('access') }}</strong>
                                     </span>
                             @endif

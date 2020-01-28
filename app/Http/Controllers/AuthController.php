@@ -22,16 +22,21 @@ class AuthController extends Controller
                 return redirect(route('admin.dashboard'));
             }
             else {
-                return back()->withErrors(array('access' => 'Invalid credentials given'));
+                return back()->withErrors(array('access' => 'Invalid credentials given'))->withInput($request->input());
             }
         }else{
             if (Auth::attempt(['username' => $access, 'password' => $password])) {
                 return redirect(route('admin.dashboard'));
             }
             else {
-                return back()->withErrors(array('access' => 'Invalid credentials given'));
+                return back()->withErrors(array('access' => 'Invalid credentials given'))->withInput($request->input());
             }
         }
 
+    }
+
+    public function logOut(){
+        Auth::logout();
+        return redirect()->route('login')->withMessage('You have been logged out.');
     }
 }

@@ -17,4 +17,8 @@ class Lga extends Model
         'added_by',
     ];
 
+    public function state(){
+        return $this->hasOne(State::class, 'unid', 'state_unid');
+    }
+
 }

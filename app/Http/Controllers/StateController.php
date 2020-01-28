@@ -14,7 +14,10 @@ class StateController extends Controller
      */
     public function index()
     {
-        //
+        $states = State::paginate(30);
+//        return $states;
+        return view('admin.pages.states.index')
+            ->with('states', $states);
     }
 
     /**

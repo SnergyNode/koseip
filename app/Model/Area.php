@@ -16,4 +16,12 @@ class Area extends Model
         'active',
         'added_by',
     ];
+
+    public function state(){
+        return $this->hasOne(State::class, 'unid', 'state_unid');
+    }
+
+    public function lga(){
+        return $this->hasOne(Lga::class, 'unid', 'lga_unid');
+    }
 }

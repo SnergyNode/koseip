@@ -14,8 +14,6 @@
     <link rel="stylesheet" href="{{ asset('css/colors/yellow.css') }}">
     <link rel="stylesheet" href="{{ asset('css/shared.css') }}">
 
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
     <style>
         {{ @$styleInject }}
     </style>

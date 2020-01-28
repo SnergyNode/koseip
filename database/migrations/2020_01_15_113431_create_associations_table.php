@@ -18,6 +18,7 @@ class CreateAssociationsTable extends Migration
             $table->string('name')->nullable();
             $table->string('code')->nullable();
             $table->text('unid')->nullable();
+            $table->text('assoc_id')->nullable();
             $table->text('info')->nullable();
             $table->text('state_unid')->nullable();
             $table->text('lga_unid')->nullable();

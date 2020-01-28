@@ -26,4 +26,18 @@ class Owner extends Model
         'lga_unid',
         'countdown_pass',
     ];
+
+    public function names(){
+        return $this->name . " " . $this->surname_name;
+    }
+
+    public function kekeId(){
+        $keke = Keke::where('owner_id', $this->unid)->first();
+        return !empty($keke)?$keke->plate:'Not Updated';
+    }
+
+    public function assoc(){
+        return $this->hasOne(Association::class, 'unid', 'assoc_unid');
+    }
+
 }

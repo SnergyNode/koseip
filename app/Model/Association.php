@@ -10,6 +10,7 @@ class Association extends Model
         'name',
         'code',
         'unid',
+        'assoc_id',
         'info',
         'state_unid',
         'lga_unid',
@@ -18,4 +19,8 @@ class Association extends Model
         'active',
         'added_by',
     ];
+
+    public function state(){
+        return $this->hasOne(State::class, 'unid', 'state_unid');
+    }
 }

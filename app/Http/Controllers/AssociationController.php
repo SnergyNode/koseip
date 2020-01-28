@@ -14,7 +14,10 @@ class AssociationController extends Controller
      */
     public function index()
     {
-        //
+        $assoc = Association::paginate(30);
+//        return $states;
+        return view('admin.pages.association.index')
+            ->with('assoc', $assoc);
     }
 
     /**

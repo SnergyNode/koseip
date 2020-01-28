@@ -14,7 +14,10 @@ class AreaController extends Controller
      */
     public function index()
     {
-        //
+        $areas = Area::paginate(30);
+//        return $states;
+        return view('admin.pages.areas.index')
+            ->with('areas', $areas);
     }
 
     /**

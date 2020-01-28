@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -53,4 +54,47 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function setName(){
+        return $this->title . ' ' . ucfirst($this->first_name) . ' ' . ucfirst($this->last_name);
+    }
+
+    public function setPhoto(){
+        return url(is_file($this->passport)? url($this->passport) : 'images/user.png');
+    }
+
+    public function seen(){
+        if(!empty($this->seen_last)){
+            return Carbon::createFromTimeStamp($this->seen_last)->diffForHumans();
+        }else{
+            return 'not available';
+        }
+
+    }
+
+    public function pos(){
+        $pos = 'Unknown';
+        if(!empty($this->position)){
+            $pos=$this->position;
+        }else{
+            switch ($this->who){
+                case 1:
+                    $pos='desk-admin';
+                    break;
+                case 2:
+                    $pos='Admin';
+                    break;
+                case 3:
+                    $pos='Senior Admin';
+                    break;
+                case 4:
+                    $pos='Super Admin';
+                    break;
+                default:
+                    $pos='Unknown';
+                    break;
+            }
+        }
+        return $pos;
+    }
 }

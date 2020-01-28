@@ -14,7 +14,10 @@ class LgaController extends Controller
      */
     public function index()
     {
-        //
+        $lgas = Lga::paginate(30);
+//        return $states;
+        return view('admin.pages.lgas.index')
+            ->with('lgas', $lgas);
     }
 
     /**

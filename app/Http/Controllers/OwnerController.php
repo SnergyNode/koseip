@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Association;
+use App\Model\Keke;
 use App\Model\Owner;
+use App\Model\State;
 use Illuminate\Http\Request;
+use Faker\Factory as Faker;
 
 class OwnerController extends Controller
 {
@@ -14,7 +18,10 @@ class OwnerController extends Controller
      */
     public function index()
     {
-        //
+        $owners = Owner::paginate(30);
+//        return $states;
+        return view('admin.pages.owner.index')
+            ->with('owners', $owners);
     }
 
     /**
@@ -24,7 +31,13 @@ class OwnerController extends Controller
      */
     public function create()
     {
-        //
+        $states= State::get();
+        $assoc = Association::get();
+        $kekes = Keke::get();
+        return view('admin.pages.owner.add')
+            ->with('states', $states)
+            ->with('assoc', $assoc)
+            ->with('kekes', $kekes);
     }
 
     /**
@@ -35,7 +48,39 @@ class OwnerController extends Controller
      */
     public function store(Request $request)
     {
+
+        $faker = Faker::create();
+
+        $name = $request->input('name');
+        $surname = $request->input('surname');
+        $phone = $request->input('phone');
+        $address = $request->input('address');
+        $a_state = $request->input('data_state');
+        $a_assoc = $request->input('data_assoc');
+        $a_keke = $request->input('data_keke');
+
+
+
+        $unid = uniqid('N3r',false);
+        $owner = new Owner();
+        $owner->name = $name;
+        $owner->surname_name = $surname;
+        $owner->phone = $phone;
+        $owner->address = $address;
+        $owner->assoc_unid = $a_assoc;
+        $owner->state_unid = $a_state;
+        $owner->unid = $unid;
+        $owner->active = true;
+        $owner->email = $faker->email;
+
+        $owner->save();
+
+        $keke = Keke::where('unid', $a_keke)->first();
+        $keke->owner_id = $unid;
+        $keke->update();
         //
+
+        return redirect()->route('owner.index')->withMessage('New Owner Added');
     }
 
     /**
